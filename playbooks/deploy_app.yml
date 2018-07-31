@@ -1,0 +1,9 @@
+---
+- name: Playbook para deploy de aplicacoes em python
+  hosts: web
+  tasks:
+  - name: Copiando arquivo de senhas
+    copy:
+      src: senhas.yml
+      dest: /home/alisson/senhas.yml
+
