@@ -20,23 +20,6 @@ Vagrant.configure("2") do |config|
         apt-get install jenkins -y --allow-unauthenticated
     SHELL
   end
-
-  config.vm.define "docker" do |docker|
-    docker.vm.network "private_network", ip: "192.168.33.11"
-    docker.vm.provider "virtualbox" do |vb|
-     vb.memory = 2048
-    end
-    docker.vm.provision "shell", inline: <<-SHELL
-        apt-get remove docker docker-engine docker.io -y
-        apt-get update
-        apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-        apt-key fingerprint 0EBFCD88
-        add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-        apt-get update
-        apt-get install docker-ce -y      
-    SHELL
-  end
   
   config.vm.define "docker-centos" do |docker|
     docker.vm.box = "centos/7"
@@ -50,8 +33,8 @@ Vagrant.configure("2") do |config|
         yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
         yum-config-manager --enable docker-ce-edge
         yum install docker-ce epel-release git -y
-        systemctl enable docker
-        systemctl start docker        
+        #systemctl enable docker
+        #systemctl start docker        
     SHELL
   end
 
@@ -85,4 +68,45 @@ Vagrant.configure("2") do |config|
     SHELL
   end
 
+  config.vm.define "bdd" do |bdd|
+    bdd.vm.network "private_network", ip: "192.168.33.15"
+    bdd.vm.provider "virtualbox" do |vb|
+     vb.memory = 1024
+    end
+    bdd.vm.provision "shell", inline: <<-SHELL
+        apt clean all
+        apt update && apt install ruby  rubygems -y
+        gem install gauntlt
+    SHELL
+  end
+  
+  config.vm.define "vault" do |vault|
+    vault.vm.network "private_network", ip: "192.168.33.16"
+    vault.vm.provider "virtualbox" do |vb|
+     vb.memory = 512
+    end
+    vault.vm.provision "shell", inline: <<-SHELL
+        wget https://releases.hashicorp.com/vault/0.10.4/vault_0.10.4_linux_amd64.zip
+        apt install unzip -y
+        unzip vault_0.10.4_linux_amd64.zip
+    SHELL
+  end
+  
+    config.vm.define "audit" do |audit|
+    audit.vm.box = "fedora/28-cloud-base"
+    audit.vm.network "private_network", ip: "192.168.33.17"
+    audit.vm.provider "virtualbox" do |vb|
+     vb.memory = 2048
+     vb.gui = true
+    end
+    audit.vm.provision "shell", inline: <<-SHELL
+        dnf clean all
+        dnf install scap-workbench -y
+        dnf install scap-security-guide -y
+        dnf group install "Xfce Desktop" -y
+    SHELL
+  end
+
 end
+
+
