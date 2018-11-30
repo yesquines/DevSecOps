@@ -1,0 +1,44 @@
+---
+- name: create instance aws
+  hosts: localhost
+  tasks:
+           - name: create security group
+             ec2_group:
+                     name: webserver
+                     description: example firewall aws rules
+                     region: us-east-1
+                     rules:
+                             - proto: tcp
+                               from_port: 80
+                               to_port: 80
+                               cidr_ip: 0.0.0.0/0
+                             - proto: tcp
+                               from_port: 443
+                               to_port: 443
+                               cidr_ip: 0.0.0.0/0
+                             - proto: tcp
+                               from_port: 22
+                               to_port: 22
+                               cidr_ip: 186.231.24.236/32
+
+           - name: create sshkey pair
+             ec2_key:
+                    name: devops
+                    key_material: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpWXXUgi0akzj327i0/3AeybIhhz0gMM0z+o9Mrd4qf2obQN4DuTC+lb6iEUYsaWkgFMUDqD56wTv1J/2g57IXfaTwznc1GeTc4RFBLdy1DuHB/v2X+LBB6jbDbWS2SOoaXwF00dqeNSq+en6hIUCEem8zQUBJ4K/0dPKOPdBkAmOhJs7S9zDxfPaMHM+gHY6Mb3m4GpEuz3XCuvIT0Dam/N+UKQ8oB5BgtMDp2WliZKB5cOqqjzWdUv0VGc3Jx3aDJISmCnSjj2MwXnjiDgxahkqz/jBnluBisY+Z80SdIcdscdKlscBWvDTI+MNEikFW63e8BXhZQMFrM1XXbmYX root@Bjorn-ironside'
+
+
+           - name: instance ec2 webserver
+             ec2:
+                    key_name: devops
+                    instance_type: t2.micro
+                    region: us-east-1
+                    image: ami-5a809b25
+                    wait: yes
+                    group: webserver
+                    count: 1
+                    user_data: |
+                               #!/bin/bash
+                               sudo apt-get update
+                               sudo apt-get install nginx -y
+                               echo " Curso DevSecOps na 4linux" > /var/www/html/index.html
+
