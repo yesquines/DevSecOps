@@ -6,14 +6,13 @@ provider "google" {
 }
 
 
-//importando as instancias que ja existem
+// Definindo qual projeto será utilizado
 resource "google_project" "devsecops" {
   name = "DevSecOps"
   project_id = "devsecops-212714"
 }
 
 //Adicionando usuario para administrar instancias
-
 data "google_iam_policy" "admin" {
   binding {
     role = "roles/compute.instanceAdmin"
@@ -26,7 +25,6 @@ data "google_iam_policy" "admin" {
 
 
 //criando a infraestrutura
-
 resource "google_compute_instance" "webserver" {
 name = "webserver-terraform"
 machine_type = "n1-standard-1"
@@ -47,8 +45,6 @@ boot_disk {
 
   }
 tags = ["http-server"]
-metadata_startup_script = "apt-get update && apt-get install nginx -y && echo 'Sou DevOps' > /var/www/html/index.html"
-
+metadata_startup_script = "apt-get update && apt-get install nginx -y && echo 'Sou DevSecOps' > /var/www/html/index.html"
 
 }
-

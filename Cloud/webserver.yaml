@@ -19,12 +19,12 @@
                              - proto: tcp
                                from_port: 22
                                to_port: 22
-                               cidr_ip: 186.231.24.236/32
+                               cidr_ip: #Inserir IP_PUBLICO/32
 
            - name: create sshkey pair
              ec2_key:
                     name: devops
-                    key_material: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpWXXUgi0akzj327i0/3AeybIhhz0gMM0z+o9Mrd4qf2obQN4DuTC+lb6iEUYsaWkgFMUDqD56wTv1J/2g57IXfaTwznc1GeTc4RFBLdy1DuHB/v2X+LBB6jbDbWS2SOoaXwF00dqeNSq+en6hIUCEem8zQUBJ4K/0dPKOPdBkAmOhJs7S9zDxfPaMHM+gHY6Mb3m4GpEuz3XCuvIT0Dam/N+UKQ8oB5BgtMDp2WliZKB5cOqqjzWdUv0VGc3Jx3aDJISmCnSjj2MwXnjiDgxahkqz/jBnluBisY+Z80SdIcdscdKlscBWvDTI+MNEikFW63e8BXhZQMFrM1XXbmYX root@Bjorn-ironside'
+                    key_material: '#INSERIR_CHAVE_PUBLICA'
 
 
            - name: instance ec2 webserver
