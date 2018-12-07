@@ -15,10 +15,10 @@
                     state: present
 
 
-          - name: create user gabriel and add group analistas
+          - name: create user and add group analistas
             iam:
                     iam_type: user
-                    name: gabriel
+                    name: #digite_um_nome
                     password: devops
                     state: present
                     access_key_state: create
@@ -26,10 +26,10 @@
 
 
 
-          - name: create user araujo and add group financeiro
+          - name: create user and add group financeiro
             iam:
                     iam_type: user
-                    name: araujo
+                    name: #digite_um_nome
                     password: devops
                     state: present
                     access_key_state: create
