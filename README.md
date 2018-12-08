@@ -38,3 +38,4 @@ Repositório para armazenamento de arquivos, links e procedimentos do curso de D
 
 > Aula10 - Contempla a Aula Prática de Kong e ChatOps
           _Contéudo básico_: Procedimento de Instalação do Kong, PostgreSQL e Ferramentas para utilização do ChatOps e Arquivos de Configuração.
+
