@@ -5,6 +5,7 @@ Repositório para armazenamento de arquivos, links e procedimentos do curso de D
 
 ##EMENTA
 - Cada Branch é referente uma aula e contém os procedimentos básicos da Aula em questão.
+- As Branchs serão liberadas ao decorrer do curso.
 
 *Branchs*
 > MASTER - Contempla os arquivos para criação da Infraestrutura do Curso.
