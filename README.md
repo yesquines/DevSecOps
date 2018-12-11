@@ -19,7 +19,7 @@ Repositório para armazenamento de arquivos, links e procedimentos do curso de D
   - *Conteúdo geral*: Procedimento de Instalação do OWASP ZAP, Procedimento de Instalação de Ambiente Gráfico, Procedimento para criação de Container para testes e Procedimentos de Instalação da Ferramenta Arachni(Conteúdo Adicional)
 
 - Aula04 - Contempla a Aula Prática de ELK
-  - *Conteúdo geral*: Procedimento de Instalação da Stack ELK e do LogStack(separadamente), Edições necessárias nos arquivos de configuração.
+  - *Conteúdo geral*: Procedimento de Instalação da Stack ELK e do LogStash(separadamente)
 
 - Aula05 - Contempla a Aula Prática de Ansible, Ansible-Vault e AWX
   - *Conteúdo geral*: Procedimento de Instalação do AWX
