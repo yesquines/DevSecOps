@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   
     jenkins.vm.provider "virtualbox" do |jen|
 	    jen.memory = "3072"
-        jen.cpu = 3
+        jen.cpus = 3
 		#jen.gui = true
    end
   end 
