@@ -3,10 +3,10 @@
 ## INTRODUÇÃO
 Repositório para armazenamento de arquivos, links e procedimentos do curso de DevSecOps
 
-##EMENTA
+## EMENTA
 - Cada Branch é referente uma aula e contém os procedimentos básicos da Aula em questão.
 
-*Branchs*
+## Branchs
 - MASTER - Contempla os arquivos para criação da Infraestrutura do Curso.
 
 - Aula01 - Contempla a aula teória referente Segurança da Informação, DevOps e DevSecOps.
