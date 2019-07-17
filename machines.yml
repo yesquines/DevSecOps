@@ -1,0 +1,27 @@
+#JENKINS - OWASP ZAP / ARACHNI / OPENSCAP / KONG
+- name: testing
+  cpus: 1
+  memory: 3072
+  ip: 192.168.77.10
+  so: centos/7
+
+#DOCKER - SONARQUBE / ANSIBLE VAULT - HARDENING / AWX / TERRAFORM
+- name: automation
+  cpus: 1
+  memory: 3072
+  ip: 192.168.77.20
+  so: ubuntu/bionic64
+
+#ELK / VAULT SERVER / CHATOPS  
+- name: logging
+  cpus: 1
+  memory: 4092
+  ip: 192.168.77.30
+  so: ubuntu/bionic64
+
+#GAUNTLT / LOGSTASH / GERRIT / VAULT CLIENT  
+- name: validation
+  cpus: 1
+  memory: 2048
+  ip: 192.168.77.40
+  so: opensuse/openSUSE-15.0-x86_64
