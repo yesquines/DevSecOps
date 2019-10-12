@@ -15,8 +15,10 @@ Vagrant.configure("2") do |config|
 			server.vm.network "private_network", ip: machines["ip"], dns: "8.8.8.8" 
 
 			server.vm.provider "virtualbox" do |vb|
+				vb.customize ["modifyvm", :id, "--groups", "/DevSecOps"]
 				vb.memory = machines["memory"]
 				vb.cpus = machines["cpus"]
+				vb.name = machines["name"]
 			end
 		end
 		
