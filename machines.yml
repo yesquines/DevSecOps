@@ -24,4 +24,4 @@
   cpus: 1
   memory: 2048
   ip: 192.168.77.40
-  so: opensuse/openSUSE-15.0-x86_64
+  so: opensuse/Tumbleweed.x86_64
