@@ -2,16 +2,18 @@
 =========================================
 
 INTRODUÇÃO
----------
+----------
+
 Repositório para armazenamento de arquivos, links e procedimentos do curso de DevSecOps
 
 EMENTA
 ------
-- Cada Branch é referente uma aula e contém os procedimentos básicos da Aula em questão.
 
-Branchs
--------
-* **MASTER** - Contempla os arquivos para criação da Infraestrutura do Curso.
+- Cada Pasta é referente uma aula e contém os procedimentos básicos da Aula em questão.
+- Arquivos sem pasta na branch **MASTER** Contempla os arquivos para criação da Infraestrutura do Curso.
+
+PASTAS
+------
 
 * **Aula01** - Contempla a aula teória referente Segurança da Informação, DevOps e DevSecOps.
   - *Conteúdo geral*: Links de Manifestos, Normas, Certificações e etc
